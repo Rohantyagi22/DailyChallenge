@@ -11,10 +11,10 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        if(head == null || head.next == null) return null;
-        boolean res = false;
+        if(head==null || head.next==null) return null;
         ListNode c1 = head;
-        ListNode c2= head;
+        ListNode c2 = head;
+        boolean res = false;
         while(c2.next!=null && c2.next.next!=null){
             c1=c1.next;
             c2=c2.next.next;
@@ -26,8 +26,8 @@ public class Solution {
         if(res){
             c1=head;
             while(c1!=c2){
-                c1=c1.next;
-                c2=c2.next;
+                c1 = c1.next;
+                c2 = c2.next;
             }
             return c1;
         }
