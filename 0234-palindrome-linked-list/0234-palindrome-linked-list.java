@@ -11,29 +11,28 @@
 class Solution {
     public boolean isPalindrome(ListNode head) {
         if(head.next==null) return true;
-        ListNode mid = middleLL(head);
-        ListNode temp = mid.next;
-        ListNode kaka = reverseLL(temp);
-        while(kaka!=null){
-            if(kaka.val != head.val){
+        ListNode mid = midLL(head);
+        ListNode temp = reverseLL(mid.next);
+        while(temp!=null){
+            if(temp.val!=head.val){
                 return false;
             }
-            kaka = kaka.next;
+            temp = temp.next;
             head = head.next;
         }
         return true;
     }
-    public ListNode middleLL(ListNode head){
-        ListNode s = head;
-        ListNode f = head;
-        while(f.next!=null && f.next.next!=null){
-            s = s.next;
-            f = f.next.next;
+    public ListNode midLL(ListNode node){
+        ListNode slow = node;
+        ListNode fast = node;
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        return s;
+        return slow;
     }
-    public ListNode reverseLL(ListNode head){
-        ListNode curr = head;
+    public ListNode reverseLL(ListNode node){
+        ListNode curr = node;
         ListNode prev = null;
         ListNode next = null;
         while(curr!=null){
