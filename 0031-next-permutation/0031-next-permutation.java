@@ -7,7 +7,8 @@ class Solution {
         }
         int j = nums.length - 1;
         if(i>=0){
-            while(j>i && nums[j]<nums[i]) //just greater
+            
+            while(nums[j]<=nums[i]) //just greater
             {
                 j--;
             }
