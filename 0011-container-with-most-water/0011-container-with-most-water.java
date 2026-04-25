@@ -4,7 +4,7 @@ class Solution {
         int j = height.length-1;
         int maxSum = 0;
         int sum = 0;
-        while(i<=j){
+        while(i<j){
             if(height[i]<height[j]){
                 sum = (j-i)*height[i];
                 i++;
