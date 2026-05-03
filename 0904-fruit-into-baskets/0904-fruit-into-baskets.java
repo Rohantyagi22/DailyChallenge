@@ -4,7 +4,6 @@ class Solution {
         int left = 0, max = 0;
         for(int right=0;right<fruits.length;right++){
             map.put(fruits[right],map.getOrDefault(fruits[right],0)+1);
-            System.out.println("map "+map.toString());
             while(map.size()>2){
                 map.put(fruits[left],map.get(fruits[left])-1);
                 if(map.get(fruits[left])==0){
