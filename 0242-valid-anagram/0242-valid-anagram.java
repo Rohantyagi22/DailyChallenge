@@ -1,13 +1,14 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        int[] charCount = new int[26];
         if(s.length()!=t.length()) return false;
+        int[] sArr = new int[26];
+        int[] tArr = new int[26];
         for(int i=0;i<s.length();i++){
-            charCount[s.charAt(i)-'a']++;
-            charCount[t.charAt(i)-'a']--;
+            sArr[s.charAt(i)-'a']++;
+            tArr[t.charAt(i)-'a']++;
         }
-        for(int ele:charCount){
-            if(ele!=0){
+        for(int i=0;i<sArr.length;i++){
+            if(sArr[i]!=tArr[i]){
                 return false;
             }
         }
