@@ -14,7 +14,7 @@ class Solution {
                 st.push(newScore);
                 sum += newScore;
             }else if(op.equals("C")){
-                sum -= st.pop();;
+                sum -= st.pop();
             }else{
                 int score = Integer.parseInt(op);
                 st.push(score);
