@@ -6,8 +6,8 @@ class Solution {
             max = Math.max(pile,max);
         }
         while(min<=max){
-            int mid = min+(max-min)/2;
-            if(valid(mid,h,piles)){
+            int mid = min + (max-min)/2;
+            if(valid(piles,mid,h)){
                 max = mid-1;
             }else{
                 min = mid+1;
@@ -15,12 +15,11 @@ class Solution {
         }
         return min;
     }
-    public boolean valid(int value,int h,int[] piles){
+    public boolean valid(int[] piles,int mid,int h){
         long count = 0;
-        for(int i=0;i<piles.length;i++){
-            count += (piles[i]+value-1)/value;
+        for(int pile:piles){
+            count = count + ((pile+mid-1)/mid);
         }
-        if(count<=h) return true;
-        else return false;
+        return count<=h;
     }
 }
