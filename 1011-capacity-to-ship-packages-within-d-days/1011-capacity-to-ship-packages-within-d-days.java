@@ -3,12 +3,12 @@ class Solution {
         int min = 1;
         int max = 0;
         for(int weight: weights){
+            min = Math.max(min,weight);
             max += weight;
-            min = Math.max(weight,min);
         }
         while(min<=max){
-            int mid = min+(max-min)/2;
-            if(valid(weights,mid,days)){
+            int mid = min + (max-min)/2;
+            if(valid(mid,weights,days)){
                 max = mid-1;
             }else{
                 min = mid+1;
@@ -16,14 +16,14 @@ class Solution {
         }
         return min;
     }
-    public boolean valid(int[] weights,int load, int days){
+    public boolean valid(int mid,int[] weights, int days){
         long count = 1;
         long sum = 0;
         for(int weight:weights){
-            sum = sum + weight;
-            if(sum>load){
-                sum = weight;
+            sum += weight;
+            if(sum>mid){
                 count++;
+                sum = weight;
             }
         }
         return count<=days;
