@@ -3,17 +3,18 @@ class Solution {
         int slow = n;
         int fast = n;
         do{
-            slow = square(slow);
-            fast = square(square(fast));
+           slow = square(slow);
+           fast = square(square(fast));
         }while(slow!=fast);
         return slow == 1;
+
     }
     public int square(int n){
         int sum = 0;
         while(n>0){
             int remainder = n%10;
-            sum += remainder*remainder;
-            n = n/10;
+            sum+=remainder*remainder;
+            n=n/10;
         }
         return sum;
     }
