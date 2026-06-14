@@ -10,16 +10,15 @@
  */
 class Solution {
     public ListNode partition(ListNode head, int x) {
-        ListNode smallDummy = new ListNode(-1);
-        ListNode largeDummy = new ListNode(-1);
-        ListNode largeTail = largeDummy;
+        ListNode smallDummy = new ListNode(0);
+        ListNode largeDummy = new ListNode(0);
         ListNode smallTail = smallDummy;
-        
+        ListNode largeTail = largeDummy;
         ListNode curr = head;
         while(curr!=null){
             if(curr.val<x){
                 smallTail.next = curr;
-                smallTail = curr;
+                smallTail = curr; 
             }else{
                 largeTail.next = curr;
                 largeTail = curr;
