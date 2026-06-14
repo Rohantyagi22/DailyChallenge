@@ -16,13 +16,12 @@ class Solution {
         while(curr.next!=null && curr.next.next!=null){
             ListNode first = curr.next;
             ListNode second = curr.next.next;
-
             first.next = second.next;
             second.next = first;
             curr.next = second;
-            
-            curr=first;
+            curr = first;
         }
         return dummy.next;
+
     }
 }
