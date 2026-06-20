@@ -20,9 +20,7 @@ class Solution {
         return diameter;
     }
     public int height(TreeNode node){
-        if(node == null){
-            return 0;
-        }
+        if(node == null) return 0;
         int lH = height(node.left);
         int rH = height(node.right);
         diameter = Math.max(diameter,lH+rH);
