@@ -7,7 +7,7 @@ class Solution {
         }
         int j = nums.length-1;
         if(i>=0){
-            while(nums[j]<=nums[i]){
+            while(nums[j]<=nums[i]){ //Just greater
                 j--;
             }
             swap(nums,i,j);
