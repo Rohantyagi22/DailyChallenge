@@ -1,15 +1,13 @@
 class Solution {
     public void nextPermutation(int[] nums) {
-        int i = nums.length - 2;
-        while(i>=0 &&nums[i]>=nums[i+1]) //just finding one greater 
-        {
+        int i = nums.length-2;
+        //First element in non-decreasing
+        while(i>=0 && nums[i]>=nums[i+1]){
             i--;
         }
-        int j = nums.length - 1;
+        int j = nums.length-1;
         if(i>=0){
-            
-            while(nums[j]<=nums[i]) //just greater
-            {
+            while(nums[j]<=nums[i]){
                 j--;
             }
             swap(nums,i,j);
@@ -21,12 +19,12 @@ class Solution {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-    public void reverse(int[] nums,int i){
-        int j = nums.length - 1;
-        while(i<=j){
-            swap(nums,i,j);
-            i++;
-            j--;
+    public void reverse(int[] nums,int start){
+        int end = nums.length-1;
+        while(start<end){
+            swap(nums,start,end);
+            start++;
+            end--;
         }
     }
 }
