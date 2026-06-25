@@ -7,12 +7,10 @@ class Solution {
         while(pq.size()>1){
             int x1 = pq.poll();
             int x2 = pq.poll();
-            if(x1==x2){
-                continue;
-            }else{
+            if(x1!=x2){
                 pq.offer(x1-x2);
             }
         }
-        return pq.isEmpty()?0:pq.poll();
+        return pq.isEmpty()?0:pq.peek();
     }
 }
