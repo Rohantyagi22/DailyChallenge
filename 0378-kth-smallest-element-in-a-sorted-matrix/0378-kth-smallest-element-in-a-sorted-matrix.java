@@ -2,11 +2,10 @@ class Solution {
     public int kthSmallest(int[][] matrix, int k) {
         int n = matrix.length;
         PriorityQueue<int[]> pq = new PriorityQueue<>(
-            (a,b)->a[0] -b[0]
+            (a,b)-> a[0] - b[0]
         );
-        //Add first element of each row
         for(int i=0;i<n;i++){
-            pq.offer(new int[]{matrix[i][0],i,0});
+            pq.offer(new int[] {matrix[i][0],i,0});
         }
         while(k>1){
             int[] curr = pq.poll();
