@@ -1,9 +1,9 @@
 class MedianFinder {
     PriorityQueue<Integer> left;
     PriorityQueue<Integer> right;
-    public MedianFinder() { 
-        left = new PriorityQueue<Integer>((a,b)-> b - a);
-        right =new PriorityQueue<Integer>();
+    public MedianFinder() {
+        left = new PriorityQueue<>((a,b)-> b-a);
+        right = new PriorityQueue<>();
     }
     
     public void addNum(int num) {
@@ -15,10 +15,10 @@ class MedianFinder {
     }
     
     public double findMedian() {
-        if(left.size()>right.size()){
-            return left.peek();
+        if(right.size()==left.size()){
+            return (right.peek()+left.peek())/2.0;
         }else{
-            return (left.peek()+right.peek())/2.0;
+            return left.peek();
         }
     }
 }
