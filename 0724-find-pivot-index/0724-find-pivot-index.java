@@ -1,13 +1,13 @@
 class Solution {
     public int pivotIndex(int[] nums) {
-        int sl=0, sr=0;
+        int sl = 0, sr = 0;
         for(int i=0;i<nums.length;i++){
-            sr+=nums[i];
+            sl += nums[i];
         }
         for(int i=0;i<nums.length;i++){
-            sr = sr  - nums[i];
+            sl -= nums[i];
             if(sl == sr) return i;
-            sl +=nums[i];
+            sr += nums[i];
         }
         return -1;
     }
