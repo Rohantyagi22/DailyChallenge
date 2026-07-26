@@ -5,7 +5,7 @@ class Solution {
             char[] ch = str.toCharArray();
             Arrays.sort(ch);
             String key = new String(ch);
-            map.putIfAbsent(key,new ArrayList<>());
+            map.putIfAbsent(key,new ArrayList<String>());
             map.get(key).add(str);
         }
         return new ArrayList<>(map.values());
