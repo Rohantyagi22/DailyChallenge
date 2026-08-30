@@ -4,23 +4,22 @@ class Solution {
         for(int i=0;i<n;i++){
             li.add(new ArrayList<>());
         }
+        boolean[] visited = new boolean[n];
         for(int[] edge: edges){
             li.get(edge[0]).add(edge[1]);
             li.get(edge[1]).add(edge[0]);
         }
-        boolean[] visited = new boolean[n];
-        return valid(visited,li,source,destination);
+        return isValid(visited,li,source,destination);
     }
-    public boolean valid(boolean[] visited,List<List<Integer>> li,int source,int destination){
-        visited[source] = true;
+    public boolean isValid(boolean[] visited,List<List<Integer>> li,int source,int destination){
         if(source == destination) return true;
-        for(int i:li.get(source)){
+        visited[source] = true;
+        for(int i: li.get(source)){
             if(!visited[i]){
-                 if(valid(visited,li,i,destination)){
+                if(isValid(visited,li,i,destination))
                     return true;
-                 }
             }
         }
         return false;
-    }
+    } 
 }
