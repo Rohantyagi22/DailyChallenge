@@ -11,10 +11,10 @@ class Solution {
         }
         return count;
     }
-    public void dfs(boolean[] visited,int[][] isConnected,int node){
-        visited[node] = true;
+    public void dfs(boolean[] visited,int[][] isConnected,int n){
+        visited[n] = true;
         for(int next=0;next<isConnected.length;next++){
-            if(isConnected[node][next]==1 && !visited[next]){
+            if(isConnected[n][next]==1 && !visited[next]){
                 dfs(visited,isConnected,next);
             }
         }
