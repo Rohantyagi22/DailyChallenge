@@ -1,7 +1,7 @@
 class Solution {
     public int countKDifference(int[] nums, int k) {
-        HashMap<Integer,Integer> map = new HashMap<>();
         int count = 0;
+        HashMap<Integer,Integer> map = new HashMap<>();
         for(int i=0;i<nums.length;i++){
             count += map.getOrDefault(nums[i]-k,0);
             count += map.getOrDefault(nums[i]+k,0);
