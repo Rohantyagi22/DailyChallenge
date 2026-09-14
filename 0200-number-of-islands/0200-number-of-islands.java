@@ -5,20 +5,21 @@ class Solution {
             for(int j=0;j<grid[0].length;j++){
                 if(grid[i][j]=='1'){
                     count++;
-                    dfs(i,j,grid);
+                    dfs(grid,i,j);
                 }
             }
         }
         return count;
     }
-    public void dfs(int row,int col,char[][] grid){
-        if(row<0 || col<0 || row>=grid.length || col>=grid[0].length || grid[row][col]=='0'){
+    public void dfs(char[][] grid,int row,int col){  
+        if(row>=grid.length || col>=grid[0].length || 
+        row<0 || col<0 || grid[row][col]=='0'){
             return;
         }
         grid[row][col] = '0';
-        dfs(row-1,col,grid);
-        dfs(row+1,col,grid);
-        dfs(row,col-1,grid);
-        dfs(row,col+1,grid);
+        dfs(grid,row-1,col);
+        dfs(grid,row,col+1);
+        dfs(grid,row,col-1);
+        dfs(grid,row+1,col);
     }
 }
