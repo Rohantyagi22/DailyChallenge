@@ -1,21 +1,22 @@
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> s1 = new HashSet<>();
-        Set<Integer> result = new HashSet<>();
-        for(int num:nums1){
-            s1.add(num);
+        Set<Integer> n = new HashSet<>();
+        Set<Integer> arr = new HashSet<>();
+        for(int num: nums1){
+            n.add(num);
         }
-        for(int num:nums2){
-            if(s1.contains(num)){
-                result.add(num);
+        for(int num: nums2){
+            if(n.contains(num)){
+                arr.add(num);
             }
         }
-        int[] arr = new int[result.size()];
+        int[] ans = new int[arr.size()];
         int i=0;
-        for(int num:result){
-            arr[i] = num;
-            i++;
+        for(int num:arr){
+            ans[i] = num;
+            i++; 
         }
-        return arr;
+        return ans;
+
     }
 }
