@@ -18,13 +18,15 @@ class Solution {
         return checkBT(root)!=-1;
     }
     public int checkBT(TreeNode node){
-        if(node == null) return 0;
+        if(node==null){
+            return 0;
+        }
         int lH = checkBT(node.left);
-        if(lH==-1){
+        if(lH == -1){
             return -1;
         }
         int rH = checkBT(node.right);
-        if(rH==-1){
+        if(rH == -1){
             return -1;
         }
         if(Math.abs(lH-rH)>1){
